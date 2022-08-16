@@ -104,24 +104,43 @@ class MainActivity : AppCompatActivity(){
         val value = shared.getString("list", null)
         val gson = GsonBuilder().create()
         val list = gson.fromJson<ArrayList<String>>(value, object :TypeToken<ArrayList<String>>(){}.type)
-        updateCityList(list)
+        if (list != null)
+            updateCityList(list)
     }
 
-    private fun updateCityList(list: ArrayList<String>){
+    private fun updateCityList(list: ArrayList<String>) {
         CitiesList.list = ArrayList()
-        list.forEach {
-            val cityNameDrawable = it.lowercase()
-            val drawableName: String = getString(R.string.AddCityFragment_OnCreateView_DrawableName_Part1) + cityNameDrawable + getString(
-                R.string.AddCityFragment_OnCreateView_DrawableName_Part2)
+        addCities()
+
+        list.forEach outer@{ itList ->
+            CitiesList.list.forEach inner@{ itCitiesList ->
+                if (itList.equals(itCitiesList.name, ignoreCase = true))
+                    return@outer
+            }
+            val cityNameDrawable = itList.lowercase()
+            val drawableName: String =
+                getString(R.string.AddCityFragment_OnCreateView_DrawableName_Part1) + cityNameDrawable + getString(
+                    R.string.AddCityFragment_OnCreateView_DrawableName_Part2
+                )
             val resId = resources.getIdentifier(
                 drawableName,
                 getString(R.string.Resource_DefType_Drawable),
                 this.packageName
             )
             if (resId != 0)
-                CitiesList.list.add(City(cityNameDrawable, ContextCompat.getDrawable(this, resId)))
+                CitiesList.list.add(
+                    City(
+                        cityNameDrawable,
+                        ContextCompat.getDrawable(this, resId)
+                    )
+                )
             else
-                CitiesList.list.add(City(cityNameDrawable, ContextCompat.getDrawable(this, R.drawable.img_default_city)))
+                CitiesList.list.add(
+                    City(
+                        cityNameDrawable,
+                        ContextCompat.getDrawable(this, R.drawable.img_default_city)
+                    )
+                )
         }
     }
 
@@ -186,13 +205,18 @@ class MainActivity : AppCompatActivity(){
         }
 
     private fun updateCityData(location : Location){
-        if (Utils.verifyNetworkState(this)){
-            val geocoder = Geocoder(this)
-            val address : List<Address> = geocoder.getFromLocation(location.latitude, location.longitude, 1)
-            val cityName = address[0].locality
+        try{
+            if (Utils.verifyNetworkState(this)){
+                val geocoder = Geocoder(this)
+                val address : List<Address> = geocoder.getFromLocation(location.latitude, location.longitude, 1)
+                val cityName = address[0].locality
 
-            binding.amTvCurrentLocationValue.text = cityName
-        }else{
+                binding.amTvCurrentLocationValue.text = cityName
+            }else{
+                Toast.makeText(this,getString(R.string.Msg_NoNetwork),Toast.LENGTH_LONG).show()
+            }
+        } catch (e: Exception){
+            e.printStackTrace()
             Toast.makeText(this,getString(R.string.Msg_NoNetwork),Toast.LENGTH_LONG).show()
         }
     }
@@ -208,6 +232,19 @@ class MainActivity : AppCompatActivity(){
             binding.amLlBackgroundImg.background = ContextCompat.getDrawable(this, resId)
             binding.amTvTitle.setTextColor(ContextCompat.getColor(applicationContext, R.color.white))
         }
+    }
+
+    private fun addCities(){
+        CitiesList.list.add(City("Lisbon", ContextCompat.getDrawable(this, R.drawable.img_lisbon_horizontal)))
+        CitiesList.list.add(City("Madrid", ContextCompat.getDrawable(this, R.drawable.img_madrid_horizontal)))
+        CitiesList.list.add(City("Paris", ContextCompat.getDrawable(this, R.drawable.img_paris_horizontal)))
+        CitiesList.list.add(City("Berlin", ContextCompat.getDrawable(this, R.drawable.img_berlin_horizontal)))
+        CitiesList.list.add(City("Copenhagen", ContextCompat.getDrawable(this, R.drawable.img_copenhagen_horizontal)))
+        CitiesList.list.add(City("Rome", ContextCompat.getDrawable(this, R.drawable.img_rome_horizontal)))
+        CitiesList.list.add(City("London", ContextCompat.getDrawable(this, R.drawable.img_london_horizontal)))
+        CitiesList.list.add(City("Dublin", ContextCompat.getDrawable(this, R.drawable.img_dublin_horizontal)))
+        CitiesList.list.add(City("Prague", ContextCompat.getDrawable(this, R.drawable.img_prague_horizontal)))
+        CitiesList.list.add(City("Vienna", ContextCompat.getDrawable(this, R.drawable.img_vienna_horizontal)))
     }
 
     private class CitiesAdapter : BaseAdapter(){
