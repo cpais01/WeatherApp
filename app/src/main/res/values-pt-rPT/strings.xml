@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ChallengeWIT</string>
+    <string name="ActivityTemperature_DefaultName">Nome da cidade</string>
+    <string name="ActivityTemperature_WindLabel">Vento</string>
+    <string name="ActivityTemperature_HumidityLabel">Humidade</string>
+    <string name="ActivityTemperature_PressureLabel">Pressão</string>
+    <string name="ActivityMain_DefaultCityName">Cidade atual</string>
+    <string name="ActivityMain_CurrentLocationText">Localização atual:</string>
+    <string name="Msg_ErrorOpeningDialogBox">Erro a abrir a dialog box</string>
+    <string name="AddCityFragment_Msg_InvalidName">Nome da cidade inválido</string>
+    <string name="AddCityFragment_Msg_NameExist">Nome da cidade já existe</string>
+    <string name="MainActivity_onCreate_Msg_LocationNotAvailable">Localização atual não disponível</string>
+    <string name="Msg_NoNetwork">Não existe ligação à Internet</string>
+    <string name="Msg_InvalidCityName">Nome da cidade inválido</string>
+    <string name="Msg_JsonError">Erro no ficheiro JSON</string>
+    <string name="FragmentAddcityDialog_CityName">Nome da cidade:</string>
+    <string name="FragmentAddcityDialog_Confirm">Confirmar</string>
+    <string name="FragmentAddcityDialog_Cancel">Cancelar</string>
+</resources>

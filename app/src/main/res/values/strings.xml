@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">ChallengeWIT</string>
+    <string name="ActivityMain_Title" translatable="false">Weather App</string>
+    <string name="ActivityMain_DefaultCityName">Current City</string>
+    <string name="ActivityMain_CurrentLocationText">Current location:</string>
+    <string name="ActivityTemperature_DefaultName">City name</string>
+    <string name="ActivityTemperature_TempMaxLabel" translatable="false">Temp. Max</string>
+    <string name="ActivityTemperature_TempMinLabel" translatable="false">Temp. Min.</string>
+    <string name="ActivityTemperature_WindLabel">Wind</string>
+    <string name="ActivityTemperature_HumidityLabel">Humidity</string>
+    <string name="ActivityTemperature_PressureLabel">Pressure</string>
+    <string name="MainActivity_mainBackgroundImgName" translatable="false">img_main_background</string>
+    <string name="TemperatureActivity_updateView_tempMetric" translatable="false">%1$sºC</string>
+    <string name="TemperatureActivity_updateView_humidityMetric" translatable="false">%</string>
+    <string name="TemperatureActivity_updateView_pressureMetric" translatable="false">%1$s hpa</string>
+    <string name="TemperatureActivity_updateView_windMetric" translatable="false">%1$s m/s</string>
+    <string name="TemperatureActivity_updateView_temperatureUnit" translatable="false">metric</string>
+    <string name="TemperatureActivity_updateView_Json_Main" translatable="false">main</string>
+    <string name="TemperatureActivity_updateView_Json_Temp" translatable="false">temp</string>
+    <string name="TemperatureActivity_updateView_Json_TempMax" translatable="false">temp_max</string>
+    <string name="TemperatureActivity_updateView_Json_TempMin" translatable="false">temp_min</string>
+    <string name="TemperatureActivity_updateView_Json_Humidity" translatable="false">humidity</string>
+    <string name="TemperatureActivity_updateView_Json_Pressure" translatable="false">pressure</string>
+    <string name="TemperatureActivity_updateView_Json_Wind" translatable="false">wind</string>
+    <string name="TemperatureActivity_updateView_Json_Speed" translatable="false">speed</string>
+    <string name="TemperatureActivity_updateView_Json_Weather" translatable="false">weather</string>
+    <string name="TemperatureActivity_updateView_Json_Icon" translatable="false">icon</string>
+    <string name="TemperatureActivity_setLocationVariables_Json_Lat" translatable="false">lat</string>
+    <string name="TemperatureActivity_setLocationVariables_Json_Lon" translatable="false">lon</string>
+    <string name="TemperatureActivity_unknown_city_drawable_name" translatable="false">default_city</string>
+    <string name="TemperatureActivity_onCreate_V_ImgBackgroundName_Part1" translatable="false">img_</string>
+    <string name="TemperatureActivity_onCreate_V_ImgBackgroundName_Part2" translatable="false">_vertical</string>
+    <string name="TemperatureActivity_Log_Tag" translatable="false">TemperatureActivity</string>
+    <string name="MainActivity_TemperatureActivity_PutExtra_Tag_CityName" translatable="false">cityName</string>
+    <string name="MainActivity_TemperatureActivity_PutExtra_Tag_TimeOfDay" translatable="false">timeOfDay</string>
+    <string name="MainActivity_TimeOfDay_Day" translatable="false">_day</string>
+    <string name="MainActivity_TimeOfDay_Night" translatable="false">_night</string>
+    <string name="MainActivity_onCreate_Msg_LocationNotAvailable">Current location not available</string>
+    <string name="MainActivity_onCreate_Dialog_Tag" translatable="false">DialogFragment</string>
+    <string name="AddCityFragment_Log_Tag" translatable="false">AddCityFragment</string>
+    <string name="AddCityFragment_Msg_InvalidName">Invalid city name</string>
+    <string name="AddCityFragment_OnCreateView_DrawableName_Part1" translatable="false">img_</string>
+    <string name="AddCityFragment_OnCreateView_DrawableName_Part2" translatable="false">_horizontal</string>
+    <string name="AddCityFragment_Msg_NameExist">City already exists</string>
+    <string name="FragmentAddcityDialog_CityName">City name:</string>
+    <string name="FragmentAddcityDialog_Confirm">Confirm</string>
+    <string name="FragmentAddcityDialog_Cancel">Cancel</string>
+    <string name="Utils_Log_Tag" translatable="false">Utils</string>
+    <string name="Msg_NoNetwork">No network available</string>
+    <string name="Msg_InvalidCityName">Invalid city name</string>
+    <string name="Msg_JsonError">JSON error</string>
+    <string name="Msg_ErrorOpeningDialogBox">Error opening dialog box</string>
+    <string name="Resource_DefType_Drawable" translatable="false">drawable</string>
+    <string name="ApiKey_OpenWeatherMap" translatable="false">4d39c0c4b4bf86349382b6007fef1d4c</string>
+</resources>

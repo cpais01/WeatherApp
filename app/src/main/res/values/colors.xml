@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_color">#f7bd4a</color>
+    <color name="background_title_color">#CF8211</color>
+    <color name="background_fad_button_add">#1BAA21</color>
+    <color name="background_fad_button_cancel">#E8281A</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
