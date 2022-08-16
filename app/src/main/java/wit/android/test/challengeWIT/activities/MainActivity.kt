@@ -55,8 +55,8 @@ class MainActivity : AppCompatActivity(){
         }
 
         binding.amLlCurrentLocation.setOnClickListener {
-            val currentCity = binding.amTvCurrentLocationValue.text
-            if (currentCity.equals(resources.getString(R.string.ActivityMain_DefaultCityName))){
+            val currentCity = binding.amTvCurrentLocationValue.text.toString()
+            if (currentCity.equals(resources.getString(R.string.ActivityMain_DefaultCityName)) || currentCity.isEmpty()){
                 Toast.makeText(this, getString(R.string.MainActivity_onCreate_Msg_LocationNotAvailable), Toast.LENGTH_LONG).show()
             }else{
                 val intent = Intent(this, TemperatureActivity::class.java)
@@ -71,7 +71,6 @@ class MainActivity : AppCompatActivity(){
             val dialog = AddCityFragment()
             dialog.show(supportFragmentManager, getString(R.string.MainActivity_onCreate_Dialog_Tag))
         }
-
         verifyPermissions()
         verifyTimeOfDay()
     }
@@ -128,19 +127,9 @@ class MainActivity : AppCompatActivity(){
                 this.packageName
             )
             if (resId != 0)
-                CitiesList.list.add(
-                    City(
-                        cityNameDrawable,
-                        ContextCompat.getDrawable(this, resId)
-                    )
-                )
+                CitiesList.list.add(City(cityNameDrawable, ContextCompat.getDrawable(this, resId)))
             else
-                CitiesList.list.add(
-                    City(
-                        cityNameDrawable,
-                        ContextCompat.getDrawable(this, R.drawable.img_default_city)
-                    )
-                )
+                CitiesList.list.add(City(cityNameDrawable, ContextCompat.getDrawable(this, R.drawable.img_default_city)))
         }
     }
 
