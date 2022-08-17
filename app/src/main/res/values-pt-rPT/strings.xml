@@ -17,4 +17,6 @@
     <string name="FragmentAddcityDialog_CityName">Nome da cidade:</string>
     <string name="FragmentAddcityDialog_Confirm">Confirmar</string>
     <string name="FragmentAddcityDialog_Cancel">Cancelar</string>
+    <string name="Msg_Location_Error">Erro ao aceder à localização</string>
+    <string name="Msg_Unable_Retrieve_Data">Não foi possível carregar os dados</string>
 </resources>

@@ -206,7 +206,7 @@ class MainActivity : AppCompatActivity(){
             }
         } catch (e: Exception){
             e.printStackTrace()
-            Toast.makeText(this,getString(R.string.Msg_NoNetwork),Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.Msg_Location_Error),Toast.LENGTH_LONG).show()
         }
     }
 

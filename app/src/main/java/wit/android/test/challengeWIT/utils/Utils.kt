@@ -40,15 +40,15 @@ object Utils {
                         return@forEachLine
                     resp.append(it + "\n")
                 }
+
             } else {
-                resp.append("Error: $code")
+                //resp.append("Error: $code")
                 return null
             }
+            conn.inputStream?.close()
+            conn.disconnect()
         } catch (_: Exception) {
             return null
-        } finally {
-            conn?.inputStream?.close()
-            conn?.disconnect()
         }
         return resp.toString()
     }

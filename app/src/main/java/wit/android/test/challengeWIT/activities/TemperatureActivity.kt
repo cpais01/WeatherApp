@@ -63,10 +63,15 @@ class TemperatureActivity : AppCompatActivity() {
         }
 
         webContentLocation.observe(this){
-            setLocationVariables(strContent)
-            val strWeather = "https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apikey&units=" + getString(
-                            R.string.TemperatureActivity_updateView_temperatureUnit)
-            getLocationDataAsync(strWeather, webContentWeatherData)
+            if (strContent != null){
+                setLocationVariables(strContent)
+                val strWeather = "https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apikey&units=" + getString(
+                    R.string.TemperatureActivity_updateView_temperatureUnit)
+                getLocationDataAsync(strWeather, webContentWeatherData)
+            }else{
+                Log.e(getString(R.string.TemperatureActivity_Log_Tag), getString(R.string.Msg_Unable_Retrieve_Data))
+                Toast.makeText(this, getString(R.string.Msg_Unable_Retrieve_Data), Toast.LENGTH_LONG).show()
+            }
         }
 
         val strLocation = "http://api.openweathermap.org/geo/1.0/direct?q=$cityNameAPI&limit=1&appid=$apikey"
@@ -103,7 +108,7 @@ class TemperatureActivity : AppCompatActivity() {
             binding.atTvWindValue.text = getString(R.string.TemperatureActivity_updateView_windMetric, wind.toString())
         }catch (_ : Exception){
             Log.e(getString(R.string.TemperatureActivity_Log_Tag), getString(R.string.Msg_JsonError))
-            Toast.makeText(this, getString(R.string.Msg_JsonError), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.Msg_Unable_Retrieve_Data), Toast.LENGTH_LONG).show()
         }
     }
 
@@ -115,7 +120,7 @@ class TemperatureActivity : AppCompatActivity() {
             longitude = jsonObject.getString(getString(R.string.TemperatureActivity_setLocationVariables_Json_Lon))
         }catch (_ : Exception){
             Log.e(getString(R.string.TemperatureActivity_Log_Tag), getString(R.string.Msg_JsonError))
-            Toast.makeText(this, getString(R.string.Msg_JsonError), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.Msg_Unable_Retrieve_Data), Toast.LENGTH_LONG).show()
         }
     }
 }

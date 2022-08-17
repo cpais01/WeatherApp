@@ -51,5 +51,7 @@
     <string name="Msg_JsonError">JSON error</string>
     <string name="Msg_ErrorOpeningDialogBox">Error opening dialog box</string>
     <string name="Resource_DefType_Drawable" translatable="false">drawable</string>
-    <string name="ApiKey_OpenWeatherMap" translatable="false">4d39c0c4b4bf86349382b6007fef1d4c</string>
+    <string name="ApiKey_OpenWeatherMap" translatable="false">please insert a valid api key</string>
+    <string name="Msg_Location_Error">Location access error</string>
+    <string name="Msg_Unable_Retrieve_Data">Unable to retrieve data</string>
 </resources>
